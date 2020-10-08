@@ -1,0 +1,4 @@
+service\CustomerManager.class
+service\InitialCustomerFiller.class
+view\CustomersBacking.class
+model\Customer.class

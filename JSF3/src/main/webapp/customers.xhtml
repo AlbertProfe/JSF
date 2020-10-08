@@ -1,0 +1,115 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+      
+<h:form>  
+    <p:growl id="messages"/>
+ 
+    <p:menubar>
+        <p:submenu label="Open" icon="pi pi-file">
+             
+        </p:submenu>
+ 
+        <p:submenu label="Data" icon="pi pi-pencil">
+            
+        </p:submenu>
+ 
+         <p:menuitem value="new Customer" url="newCustomer.xhtml" icon="pi pi-times" />
+ 
+       
+ 
+        <p:menuitem value="Quit" url="http://www.primefaces.org" icon="pi pi-times" />
+ 
+        <f:facet name="options">
+            <p:inputText style="margin:1px 10px 1px 1px;" placeholder="Search"/>
+           
+        </f:facet>
+    </p:menubar>
+</h:form>      
+      
+      
+      
+      
+      
+      
+<f:view>
+    <h:head>
+        <h:outputStylesheet>
+            th, td {
+                text-align: center;
+            }
+
+            h3 {
+                margin-top: 0;
+                text-align: center;
+            }
+
+            input[type="text"] {
+                width: 100%;
+                box-sizing: border-box;
+                -webkit-box-sizing:border-box;
+                -moz-box-sizing: border-box;
+            }
+
+        </h:outputStylesheet>
+    </h:head>
+    <h:body>
+        <p:outputPanel>
+            <h3>Customer Overview</h3>
+            <div class="ui-g">
+                <div class="ui-g-2"/>
+                <div class="ui-g-8">
+                    <h:form id="customers">
+                         <p:growl id="growl" sticky="true" />
+
+                        <p:dataTable id="customerList" var="customer" value="#{customersBacking.customers}">
+                            <p:column headerText="Id">
+                                <h:outputText value="#{customer.id}"/>
+                            </p:column>
+
+                            <p:column headerText="First name">
+                                <p:inputText id="firstNameInput" value="#{customer.firstName}"/>
+                            </p:column>
+
+                            <p:column headerText="Last name">
+                                <p:inputText id="lastNameInput" value="#{customer.lastName}"/>
+                            </p:column>
+
+                            <p:column headerText="Email">
+                                <p:inputText id="emailInput" value="#{customer.email}"/>
+                            </p:column>
+
+                            <p:column headerText="Day of birth">
+                                <h:outputText value="#{customer.dayOfBirth}">
+                                    <f:convertDateTime type="localDate" pattern="dd.MM.yyyy"/>
+                                </h:outputText>
+                            </p:column>
+
+                            <p:column headerText="Customer ID">
+                                <h:outputText value="#{customer.customerId}"/>
+                            </p:column>
+
+                            <p:column>
+                                <p:commandButton update="customerList" value="Delete" icon="ui-icon-closethick"
+                                                 action="#{customersBacking.delete(customer)}"
+                                                 styleClass="ui-priority-primary">
+                                </p:commandButton>
+                            </p:column>
+                        </p:dataTable>
+                        <br/>
+                        <p:commandButton style="float: right" id="save" value="Save" tyleClass="ui-priority-primary"
+                                         action="#{customersBacking.update}" icon="ui-icon-disk" update="growl">
+                           
+                        </p:commandButton>
+                    </h:form>
+                </div>
+                <div class="ui-g-2">
+                </div>
+            </div>
+     
+            
+        </p:outputPanel>
+    </h:body>
+</f:view>
+</html>
