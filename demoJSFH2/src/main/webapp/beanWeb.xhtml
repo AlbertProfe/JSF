@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+	<title>Hello Bean</title>
+</h:head>
+<h:body>
+	<center>
+		<h2>Hello Bean World Jakarta JSF 2.2 CDI WILDFLY</h2>
+
+
+
+		<h:form>
+			<p>
+				<h:outputLabel for="input"
+					value="Write something to JSF H2 table messages" />
+			</p>
+			<p>
+				<h:inputText id="input" value="#{bean.message.text}" />
+			</p>
+
+			<p>
+				<h:commandButton value="Submit text and add to table"
+					action="#{bean.submit}">
+					<f:ajax execute="@form" render=":table" />
+				</h:commandButton>
+			</p>
+		</h:form>
+		<br></br>
+		<h2>Jakarta JSF 2.2 CDI WILDFLY + JPA H2</h2>
+
+		<p>
+			<h:outputLabel for="input2"
+				value="Table messages with message object from messageService and h2" />
+		</p>
+
+
+		<h:dataTable id="table" value="#{bean.messages}" var="message">
+			<f:facet name="header">id text</f:facet>
+			
+			<h:column>#{message.id}</h:column>
+			<h:column>#{message.text}</h:column>
+		</h:dataTable>
+
+	</center>
+</h:body>
+</html>
