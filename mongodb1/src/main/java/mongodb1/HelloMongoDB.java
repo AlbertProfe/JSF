@@ -22,17 +22,13 @@ public class HelloMongoDB {
 		//create object mongoClient: object to connect, manage, get DBs, handle, ... CRUD, clean, etc ...
 		MongoClient mongoClient = new MongoClient(connectionString);
 		
-		//getter from mongo to get db, particullary CITY
+		//getter from mongo to get db, particularly CITY
 		MongoDatabase database = mongoClient.getDatabase("city");
 		//collection CARS
 		MongoCollection<Document> collection = database.getCollection("cars");
 
-		
-		
-		
 		System.out.println("Number of cars in my CAR collection: " + collection.countDocuments());
-
-		
+	
 		//query to my collection and find the first document and then transform to JSON
 		// in order to print that document as JSON and STRING
 		Document myDoc = collection.find().first();
