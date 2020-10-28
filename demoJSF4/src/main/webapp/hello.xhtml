@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>JSF 2.0 Hello World</title>
+
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></link>
+</h:head>
+
+<h:body>
+
+	<div class="w3-bar w3-black">
+		<a href="#" class="w3-bar-item w3-button">Home</a> <a href="#"
+			class="w3-bar-item w3-button">Registered</a> <a href="#"
+			class="w3-bar-item w3-button">Logout</a>
+	</div>
+
+	<div class="w3-container">
+		<h2>JSF 2.0 AJAX W3.CSS</h2>
+
+		<div class="w3-card-4">
+			<div class="w3-container w3-blue">
+				<h2>Input Form</h2>
+			</div>
+
+			<h:form class="w3-container">
+				<p>
+					<h:inputText id="firstname" value="#{studentBean.firstName}"
+						class="w3-input"></h:inputText>
+					<label>First Name</label>
+				</p>
+				<p>
+					<h:inputText id="lastname" value="#{studentBean.lastName}"
+						class="w3-input"></h:inputText>
+					<label>Last Name</label>
+				</p>
+
+				<p>
+					<h:inputText id="age" value="#{studentBean.age}" class="w3-input"></h:inputText>
+					<label>Age</label>
+				</p>
+				<p>
+					<h:commandButton value="Send Form" action="registered"
+						class="w3-button w3-indigo"></h:commandButton>
+				</p>
+
+
+			</h:form>
+		</div>
+	</div>
+</h:body>
+</html>

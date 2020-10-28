@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>Student Bean</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></link>
+</h:head>
+
+
+<h:body>
+
+	<div class="w3-bar w3-black">
+		<a href="index.xhtml" class="w3-bar-item w3-button">Home</a> <a
+			href="newStudent.xhtml" class="w3-bar-item w3-button">New Student</a>
+		<a href="students.xhtml" class="w3-bar-item w3-button">Students</a> <a
+			href="#" class="w3-bar-item w3-button">Logout</a>
+
+		<button class="w3-bar-item w3-button w3-black w3-right">Go</button>
+		<input type="text" class="w3-bar-item w3-input w3-sand w3-right"></input>
+	</div>
+
+	<div class="w3-container" style="width:60%; margin-left:100px">
+		<h2>New Student</h2>
+		<div class="w3-card-4" >
+			<div class="w3-container w3-blue">
+				<h2>Input New Student Form</h2>
+			</div>
+
+			<h:form class="w3-container">
+				<p>
+					<h:inputText id="firstname"
+						value="#{studentBean.student.firstName}" class="w3-input" />
+					<label>First Name</label>
+				</p>
+				<p>
+					<h:inputText id="lastname" value="#{studentBean.student.lastName}"
+						class="w3-input"></h:inputText>
+					<label>Last Name</label>
+				</p>
+				<p>
+					<h:inputText id="address" value="#{studentBean.student.address}"
+						class="w3-input"></h:inputText>
+					<label>Address</label>
+				</p>
+				<p>
+					<h:inputText id="city" value="#{studentBean.student.city}"
+						class="w3-input"></h:inputText>
+					<label>City</label>
+				</p>
+				<p>
+					<h:inputText id="postcode" value="#{studentBean.student.postcode}"
+						class="w3-input"></h:inputText>
+					<label>Post Code</label>
+				</p>
+				<p>
+					<h:inputText id="country" value="#{studentBean.student.country}"
+						class="w3-input"></h:inputText>
+					<label>Country</label>
+				</p>
+				<p>
+					<h:inputText id="age" value="#{studentBean.student.age}"
+						class="w3-input"></h:inputText>
+					<label>Age</label>
+				</p>
+				<p>
+					<h:commandButton value="Send Form" action="#{studentBean.submit}"
+						class="w3-button w3-indigo">
+						</h:commandButton>
+				</p>
+			</h:form>
+		</div>
+	</div>
+
+</h:body>
+</html>

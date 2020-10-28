@@ -1,0 +1,5 @@
+service\StudentService.class
+model\Student_Image.class
+model\Student.class
+service\StudentImageService.class
+view\StudentBean.class

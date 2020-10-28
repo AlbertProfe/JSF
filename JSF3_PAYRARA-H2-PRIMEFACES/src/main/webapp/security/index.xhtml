@@ -1,0 +1,120 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>JSF and PrimeFaces</title>
+	<style type="text/css">
+            .ui-panel {
+                margin: 15px;
+                width: 300px;
+            }
+        </style>
+	<h:outputStylesheet>
+		.jqplot-series-canvas {
+			background: white;
+		}
+
+		.ui-datatable td {
+			font-size: 10px;
+		}
+
+		body .ui-datatable thead th .ui-column-title {
+			font-size: 10px;
+		}
+	</h:outputStylesheet>
+</h:head>
+
+<h:body>
+	<p:outputPanel>
+		<ui:insert name="header">
+			<ui:include src="/WEB-INF/templates/header.xhtml" />
+		</ui:insert>
+		<div class="ui-g">
+			<div class="ui-g-2"></div>
+			<div class="ui-g-8">
+				<h2 style="text-align: center">Applications with JSF
+					2.3 and PrimeFaces</h2>
+				<p:outputPanel>
+
+
+			<div class="ui-g">
+				<div class="ui-g-2"></div>
+				<div class="ui-g-8">
+					<h:form id="welcomelogin">
+						<h:panelGrid columns="3" cellpadding="5" style="margin: 0 auto;">
+						
+						
+						</h:panelGrid>
+						
+						
+						<p:panelGrid columns="2" cellpadding="5" style="margin: 0 auto;">
+							<f:facet name="header">
+								<h4>Welcome to JSF Security web</h4>
+							
+							</f:facet>
+
+							<h:outputText value="Logged-in as:" />
+							<h:outputText value=" #{request.userPrincipal.name}" />
+
+							<h:outputText value="Password" />
+							<h:outputText value="****** "/>
+
+						</p:panelGrid>
+						<p:panelGrid columns="2" cellpadding="5" style="margin: 0 auto;">
+						
+						
+							<f:facet name="header">
+								<h:graphicImage library="images" name="jsf.png" />
+							</f:facet>
+
+							<h:outputText value="Framework" />
+							<h:outputText value="JSF 2.3 CDI 2.0" />
+
+							<h:outputText value="DB" />
+							<h:outputText value="JPA H2 in memory" />
+
+							<h:outputText value="Dependencies" />
+							<h:outputText value="MAVEN 4.0" />
+
+							<h:outputText value="IDE" />
+							<h:outputText value="Eclipse 2020-03" />
+							
+							
+						</p:panelGrid>
+						
+						
+						
+					</h:form>
+				</div>
+				<div class="ui-g-2"></div>
+			</div>
+		</p:outputPanel>
+			</div>
+			<div class="ui-g-2" />
+		</div>
+		
+		
+		
+		<p:sidebar widgetVar="sidebar4" position="bottom" baseZIndex="10000">
+			<h1 style="font-weight: normal">JSF - Spring Boot</h1>
+			<p:commandButton value="Cancel" oncomplete="PF('sidebar4').hide()" />
+		</p:sidebar>
+		<p:commandButton icon="pi pi-arrow-up"
+			oncomplete="PF('sidebar4').show()" value="sidebar up" />
+
+
+	<p:panel id="opnl" header="JSF Features">
+    <h:outputText value="I am actually a regular p:panel. I promise that.  :-)" />
+</p:panel>
+<p:draggable for="opnl" opacity="0.1" />	
+
+		
+		<ui:insert name="footer">
+			<ui:include src="/WEB-INF/templates/footer.xhtml" />
+		</ui:insert>
+		
+	</p:outputPanel>
+</h:body>
+</html>
