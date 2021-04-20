@@ -31,6 +31,7 @@ public class Test {
 			System.out.println("The number is at least 1000");
 		}
 
+		//to untrust people ...
 		System.out.println("Thank you very much to colaborate wiht us .. see you soon ..");
 	}
 
