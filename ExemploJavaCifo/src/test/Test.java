@@ -18,7 +18,7 @@ public class Test {
 		String name = reader.next();
 		
 		
-		
+		//test to reader
 		System.out.println(hello + ", " + name);
 		System.out.println("Tell me a number");
 		int number = reader.nextInt();
